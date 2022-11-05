@@ -1,0 +1,46 @@
+{% extends 'portfolio/base.html' %}
+{% block title %} Error {% endblock title %}
+
+{% block content %}
+
+<style>
+    body{
+        color: white;
+        text-transform: capitalize;
+        padding: 20px 5%;
+    }
+
+    .icon{
+        text-align: center;
+        font-size: 100px;
+        color: red;
+
+        margin: auto 0;
+
+    }
+
+    .error_tips{
+        margin: 30px 0;
+    }
+
+</style>
+
+    <div>
+        <i class="bi bi-x-circle-fill icon"></i>
+        <h2> {{msg}} </h2>
+
+        <div class="error_tips">
+            <h5> Try: </h5>
+            <ul>
+                <li> Checking your internet connection. </li>
+                <li> Reconnecting to your wifi. </li>
+                <!-- <li>  You can click <a href="" onclick="location.reload()"> here</a> to reload the page </li> -->
+                <li> If you've tried all mentioned above try coming back in the next 10-20Min. </li>
+            </ul>
+        </div>
+
+        <a href="{% url 'home' %}"> Go back to home page </a>
+
+    </div>
+
+{% endblock %}

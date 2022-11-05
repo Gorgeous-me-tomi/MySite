@@ -1,0 +1,761 @@
+{% extends 'portfolio/base.html' %}
+
+{% load static %}
+
+{% block title %} Erinle Tomisin {% endblock title %}
+
+{% block content %}
+
+<!-- <div class="preloader">
+  <div class="wrapperanimate">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+    <div class="shadow"></div>
+    <span>Loading</span>
+  </div>
+</div> -->
+
+  <header id="header" class="header">
+
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+      <!-- <img src="{% static 'portfolio/images/Mefavicon.webp' %}" alt="" srcset="" width="40px" height="40px"> -->
+      <a class="navbar-brand ms-4 fw-bold text-light" href="#"> Tomisin </a>
+      <button class="navbar-toggler" style="border: none; outline: none;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-three-dots border-none text-light" style="font-size: 30px;"></i>
+
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#cover">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#service">Service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Portfolio</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#blog">Blog</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Are u bored?
+            </a>
+            <ul class="dropdown-menu more bg-dark">
+              <!-- <li> <a class="dropdown-item" href="/blog" target="_blank"> Check out my blog </a> </li> -->
+              <li> <a class="dropdown-item" href="#portfolio" > View my projects </a> </li>
+              <li> <a class="dropdown-item" href="{{random_portfolio_link}}" title="{{random_portfolio_link}}" target="_blank"> View random project</a> </li>
+
+              <li> <a class="dropdown-item" href="" onclick="location.reload()"><i class="bi bi-arrow-clockwise fs-5"></i>Reload Page</a></li>
+          </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link flag" href="https://en.wikipedia.org/wiki/{{country_name}}" target="_blank" title="About your Country -> {{country_name}}"> {{country_pic|safe}} {{country_code}} </a>
+          </li>
+
+
+      </div>
+    </nav>
+
+   
+
+
+  </header>
+
+  <!-- ErrorBox -->
+
+  {% if form.errors %}
+    <div class="error-box" onclick="this.style.display='none'">
+      <div>
+        <p class="error_msg">The Form you submitted was invalid.<br><a href="#contact">Fix!</a></p> 
+        <small> Click on any part of the box to close this box </small>
+      </div>
+    </div>
+  {% endif %}
+
+
+  <!-- Welcome Modal -->
+  <div class="modal modal-1 fade"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Welcome treat</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h5> Hello dear users and welcome to Tomisin's portfolio, </h5>
+          <h5 class="mt-4 mb-4"> Hmmm, I hope you find my portfolio and projects stunning, <strong> I'm looking forward to be d One you choose 4 ur next project 😉 </strong>. </h5>
+          <h5 class="battery-status-review">  </h5>
+
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Back-To-Top --> 
+  <div class="btp">
+    <a href="#"><i class="bi bi-caret-up-fill"></i></a>
+  </div>
+
+  <!-- Toggle btn -->
+  <div> 
+    <i class="bi bi-brightness-high-fill toggle-bg"></i>
+  </div>
+
+
+  <!-- Cover -->
+  <section id="cover">
+
+      
+    <div class="cover-container row">
+      
+
+      <div class="col mt-5">
+        <h2 style="font-size: 50px;" class="text-light">Hi,</h2>
+        <div class="typed-out"><h2> I'm Erinle Tomisin,</h2> </div>
+    
+        <p class='text-black lead fw-bold'>
+        I'm a Nigerian and currently a Senior secondary student. I started my programming career when i was 12years of age, at a very know computer school named <a class="text-black" href="http://www.aptechabeokuta.com.ng" target="_blank"> Aptech Computer Education</a>. My education didn't just stop there, <a href="#about" class="text-white fw-normal"> View More </a>
+        </p>
+
+
+        {% comment %} <button class='btn btn-outline-primary ms-5'> Hire Me </button> {% endcomment %}
+
+
+      </div>
+        
+
+      <div class="col">
+        <div class="head-img">
+          <img src="{% static 'portfolio/images/Me-Bitmoji.webp' %}" alt="My Bitmoji" srcset="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <!-- Spy Nav -->
+  
+  <div data-bs-spy="scroll" data-bs-target="#navbar" class="scrollspy p-3 rounded-2" tabindex="0">
+
+    <!-- About -->
+    <section id="about" class="container spacing"> 
+      <span class="title-shadow"> About Me </span>
+      <h2 class="title-text"> Some information about me</h2>
+
+      <div class="row">
+
+        <div class="col-12 col-lg-6 image px-auto ">
+          <!-- <h1 class="text-light">Me Bitmoji</h1> -->
+          <img class="my-img mx-auto" src="{% static 'portfolio/images/Me2.jpg' %}" alt="My Image">
+          <!-- <div class="my-img"></div> -->
+
+        </div>
+
+
+        <div class="col-12 col-lg-6 details">
+
+
+          <div class="btn-grp">
+            <button class="btn btn-outline-primary pag-btn" onclick="pagination(0)">About</button>
+            <button class="btn btn-outline-primary pag-btn" onclick="pagination(1)">Skills</button>
+            <button class="btn btn-outline-primary pag-btn" onclick="pagination(2)">Experience</button>
+          </div>
+
+          <!-- About -->
+          <div class="pag-contents first">
+            <span class="title"> About..... </span>
+            <p> My name is Erinle OluwaTomisin, A Nigerian and currently a Senior secondary student. I started my programming career when i was 12years of age, at a very know computer school named <a class="text-primary" href="http://www.aptechabeokuta.com.ng" target="_blank"> Aptech Computer Education</a>. My education didn't just stop there, I went futher into programming by taking online courses at <a class="text-primary" href="http://www.udemy.com" target="_blank"> Udemy</a> , and i'm so glad that my efforts and studies were not in vain  because am currently a <strong>FullStack developer</strong>. One of my dreams is to create programs that will change the world for better. And i'm certain that with your help my dream can become a reality.</p>
+          
+            <div class="row details-box">
+
+              <div class="col-12 col-sm-6 p-0">
+                <ul style="list-style-type: none;">
+                  <li></i><strong>Name:</strong>Erinle Tomisin</li>
+                  <li></i><strong>Phone:</strong>+234 814 523 5799</li>
+                  <li><strong>Email:</strong>tomisinerinle4@gmail.com</li>
+                </ul>
+              </div>
+
+              <div class="col-12 col-sm-6 p-0 ps-sm-2">
+                <ul style="list-style-type: none;">
+                  <li></i><strong>Age:</strong>14</li>
+                  <li></i><strong>City:</strong>Lagos, NIGERIA</li>
+                  <li></i><strong>Freelancer:</strong>Available</li>
+
+                </ul>
+              </div>
+              <button class="btn mt-3 text-light" style="border-radius: 0px; background: linear-gradient(to top left,#0275d8, #766dff); cursor: not-allowed;">CV coming soon....</button>
+
+            </div>
+          </div>   
+     
+
+          <!-- Skills -->
+          <div class="pag-contents skills">
+            <span class="title">Skills.....</span>
+            <p> I've acquired alot of skills during my years of programming and these skills include: </p>
+            <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, voluptate rem, magnam, voluptatum repellendus inventore hic maxime voluptates quasi voluptatibus quam officia saepe aut itaque autem facere eum quas! Minima.</p> -->
+
+            <div class="row mt-5">
+              <div class="col-sm-6">
+
+                <div class="prog">
+                  <div class="skills-info"><i class="fa-brands fa-html5" style="color: orangered;"></i></i><span>Html</span><span class="p-timer" data-from="0" data-to="95" data-speed="1500" data-refresh-interval="100">95</span>%</div>
+                  <div class="progress" style="height: 3px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
+                  </div>
+                </div>
+
+                <div class="prog">
+                  <div class="skills-info"><i class="fa-brands fa-css3-alt" style="color: blue;"></i><span>Css</span><span class="p-timer" data-from="0" data-to="85" data-speed="1500" data-refresh-interval="100">85</span>%</div>
+                  <div class="progress" style="height: 3px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                  </div>
+                </div>
+    
+                <div class="prog">
+                  <div class="skills-info"><i class="fa-brands fa-bootstrap" style="color: purple;"></i><span>Bootstrap</span><span class="p-timer" data-from="0" data-to="85" data-speed="1500" data-refresh-interval="100">85</span>%</div>
+                  <div class="progress" style="height: 3px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                  </div>
+                </div>
+  
+                <div class="prog">
+                  <div class="skills-info"><i></i><span>Flask</span><span class="p-timer" data-from="0" data-to="85" data-speed="1500" data-refresh-interval="100">85</span>%</div>
+                  <div class="progress" style="height: 3px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                  </div>
+                </div>
+
+              </div>
+     
+              <div class="col-sm-6">
+
+                <div class="prog">
+                  <div class="skills-info"><i class="fa-brands fa-python" style="color: goldenrod;"></i><span>Python</span><span class="p-timer" data-from="0" data-to="80" data-speed="1500" data-refresh-interval="100">80</span>%</div>
+                  <div class="progress" style="height: 3px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                  </div>
+                </div>
+
+                <div class="prog">
+                  <div class="skills-info"><i></i><span>Graphics Design</span><span class="p-timer" data-from="0" data-to="80" data-speed="1500" data-refresh-interval="100">80</span>%</div>
+                  <div class="progress" style="height: 3px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                  </div>
+                </div>
+ 
+                <div class="prog">
+                  <div class="skills-info"><i class="fa-brands fa-square-js" style="color: gold;"></i><span>JavaScript</span><span class="p-timer" data-from="0" data-to="70" data-speed="1500" data-refresh-interval="100">70</span>%</div>
+                  <div class="progress" style="height: 3px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                  </div>
+                </div>
+
+                <div class="prog">
+                  <div class="skills-info"><i></i><span>Django</span><span class="p-timer" data-from="0" data-to="85" data-speed="1500" data-refresh-interval="100">85</span>%</div>
+                  <div class="progress" style="height: 3px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                  </div>
+                </div>
+            
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Experience -->
+          <div class="pag-contents">
+              <span class="title">Experience.....</span>
+              <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, voluptate rem, magnam, voluptatum repellendus inventore hic maxime voluptates quasi voluptatibus quam officia saepe aut itaque autem facere eum quas! Minima.</p> -->
+              
+              <div class="row experience-box">
+                <div class="col-12 col-md-6 review-box ">
+                  <div class="row">
+                    <div class="col-3"><i style="color:green" class="bi bi-emoji-smile"></i></div>
+                    <!-- <i class="fa-light fa-face-smile"></i> -->
+                    
+                    <div class="col-9">
+                      <!-- <span class="timer" data-from="0" data-to="50" data-speed="2000" data-refresh-interval="100"></span> -->
+                      <span class="timer">10+</span>
+                      <span class="title">Happy client</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 review-box ">
+                  <div class="row">
+                    <!-- <i class="fa-solid fa-face-grin"></i> -->
+                    <div class="col-3"><i style="color:goldenrod" class="bi bi-journal-text"></i></div>
+                    <div class="col-9">
+                      <!-- <span class="timer" data-from="0" data-to="100" data-speed="2000" data-refresh-interval="100"></span> -->
+                      <span class="timer">50+</span>
+                      <span class="title">Completed projects</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row experience-box">
+                <div class="col-12 col-md-6 review-box ">
+                  <div class="row">
+                    <div class="col-3"><i style="color:blue" class="bi bi-clock-history"></i></div>
+                    <div class="col-9">
+                      <!-- <span class="timer" data-from="0" data-to="2" data-speed="3000" data-refresh-interval="100"></span> -->
+                      <span class="timer">2+</span>
+                      <span class="title">Years Experience</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="col-6"></div>
+              </div> -->
+
+            </div>
+
+          </div>
+
+        </div><!-- end col -->
+
+
+      </div> <!-- end row -->
+
+    </section>
+
+    {% comment %} Service {% endcomment %}
+    <section id="service" class="service spacing">
+      <span class="title-shadow" style="text-align: center;">What i do</span>
+      <h2 class="title-text"> Here are some of my experties </h2>
+
+      <div class="experties">
+        <!-- <span class="sub">Here are some of my experties_ _ _ _ _ _ _</span> -->
+
+        <div class="row">
+
+          {% for data in experties_show %}
+
+            <div class="col-12 col-lg-4 column">
+              <div class="card">
+                <div class="icon" style="color: {{data.color}};">
+                  {{data.icon|safe}}
+                </div>
+                <div class="content">
+                  <h1> {{data.title}}  </h1>
+                  <p style="padding: 15px 35px; color: grey; font-size: 17px;"> {{data.writeup}} </p>
+                  <div class="line" style="background-color: {{data.color}};"></div>
+                </div>
+              </div>    
+            </div>
+
+          {% endfor %}
+          
+        </div>
+
+        <div class="row toggle-row d-lg-flex" style="display: none;">
+
+            {% for data in experties_hide %}
+
+              <div class="col-12 col-lg-4 column">
+                <div class="card">
+                  <div class="icon" style="color: {{data.color}};">
+                    {{data.icon|safe}}
+                  </div>
+                  <div class="content">
+                    <h1> {{data.title}} </h1>
+                    <p style="padding: 15px 35px; color: grey; font-size: 17px;"> {{data.writeup}} </p>
+                    <div class="line" style="background-color: {{data.color}};"></div>
+                  </div>
+                </div>   
+              </div>
+
+          {% endfor %}
+
+        </div>
+        {% comment %} Toggle btn {% endcomment %}
+        <div style="text-align: end;"> 
+          <button class="btn toggle-view d-inline d-lg-none text-primary" onclick="hide_show()">Show more<i class="bi bi-box-arrow-in-right"></i></button>
+        </div>
+
+      </div>
+
+    </section>
+
+    {% comment %} Hire Me {% endcomment %}
+    <section class="container-fluid hire-me">
+      <div class="content">
+        <h1>I'm <strong>Available</strong> for Freelancing </h1>
+        <a href="#contact"> <button class="btn btn-primary">  Hire Me  </button> </a>
+      </div>
+    </section>
+
+    {% comment %} Portfolio Section {% endcomment %}
+
+    <section class="portfolio spacing" id="portfolio">
+      <span class="title-shadow" style="text-align: center;">Portfoilo</span>
+      <h2 class="title-text"> some of my recent project </h2>
+  
+      <div class='row'>
+        {% comment %} card {% endcomment %}
+        {% for portfolio in portfolio_data  %}
+          <div class='col-12 col-sm-6 col-lg-4 mt-1 mb-5'>          
+            <div class='project-card'>
+
+              <div class='head'>
+                <div>
+                  <h4 class='category'> {{portfolio.category}} </h4>
+                  <h2 class='brand'> {{ portfolio.name }} </h2>
+                </div>
+
+                <div class='icons'>
+                  {% if portfolio.link != None %}
+                    <a href='{{portfolio.link}}' target='_blank'><i class="bi bi-eye-fill"></i></a>
+                    <i class="bi bi-clipboard clipboard" title="Copy project link" onclick="copy('{{portfolio.id}}')"></i>
+                    <span class='link-to-copy d-none'>{{portfolio.link}}</span>
+                  
+                  {% else %}
+                    <a href="{% static 'portfolio/images/projectImages/'|add:portfolio.image %}" target='_blank' title="view project image"> <i class="bi bi-arrow-up-right-square-fill"></i>  </a>
+
+                  {% endif %}
+                </div>
+              </div>
+
+              <!-- Project Images -->
+              <img class="img-part" src="{% static 'portfolio/images/projectImages/'|add:portfolio.image %}" alt="Screenshot of {{ portfolio.name }}" srcset="" >
+
+
+            </div>
+          </div>
+        {% endfor %}
+
+      </div>
+      
+
+
+    </section>
+
+    {% comment %} Testimonials Section {% endcomment %}
+    <section id="testimonials" class="testimonials spacing">
+      <span class="title-shadow" style="text-align: center;">Testimonials</span>
+      <h2 class="title-text"> What people say about me</h2>
+
+
+      <div class="testimonial-section">
+
+        <div class="testimonial-box">
+  
+          
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              
+            </div>
+            <div class="carousel-inner">
+              
+              <!-- Active Carousel -->
+
+              <div class="carousel-item testimonial-card active">
+                <div class='item'>
+                  <div class="text">
+                    <p style="color: white;"><i class="fa-solid fa-quote-left"></i>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, sit, vero quo placeat voluptatum rerum nemo, unde rem aliquam nobis eos pariatur dolorem neque odit iste animi error asperiores. Adipisci! <i class="fa-solid fa-quote-right"></i></p>
+                  </div>
+                  
+                  <div class="profile">
+                    <div class="testimonial-img" style="background-image: url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29uc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)";></div>
+                    <h3 class="author">Erinle Tunmise, <small> Software Engineer </small> </h3>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Others -->
+
+              {% for data in testimonials_data %}
+
+                <div class="carousel-item testimonial-card">
+                  <div class='item'>
+                    <div class="text">
+                      <p style="color: white;"><i class="fa-solid fa-quote-left"></i> {{data.content}} <i class="fa-solid fa-quote-right"></i></p>
+                    </div>
+                    
+                    <div class="profile">
+                      <img class="testimonial-img" src="{% static 'portfolio/images/testimonialsImages/'|add:data.image %}" alt="">
+                      <div  style="background-image: url('{{}')";></div>
+                      <h3 class="author">{{data.name}},  <small> Software Engineer </small> </h3>
+                     
+
+                    </div>
+                  </div>
+
+                </div>
+
+              {% endfor %}
+            
+            <button class="carousel-control-prev d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- </div> -->
+
+
+    </section>
+
+    {% comment %} Blog Section {% endcomment %}
+
+    <!-- <section id='blog' class='blog spacing'>
+      <span class="title-shadow" style="text-align: center;">Blog</span>
+      <h2 class="title-text"> Some of my recent posts</h2>
+
+      <div class='px-2 px-sm-5'>
+        <div class='row blog-row '>
+
+          {% for post in blog_posts %}
+            <div class='col-12 col-lg-4 blog-card'> 
+
+              <div class='first-row'>
+                <div class='img' style='background-image: url({{post.image.url}})'></div>
+                <p class='title'> {{post.title}} </p>
+                <div class='info'> 
+                  <span> <i class="bi bi-person"></i> {{post.author}} </span> 
+                  <span> <i class="bi bi-calendar"></i> {{post.date}} </span> 
+                </div>
+              </div>
+
+              <div class='second-row'>
+                <p class='content'>
+                  {{ post.excerpt }}
+                </p>
+
+                <a href='blog/posts/{{post.slug}}' target="_blank"> Continue reading </a>
+
+              </div>
+
+            </div>
+          {% endfor %}
+
+         
+        </div>
+      </div>
+
+
+    </section>  -->
+
+    {% comment %} Contact Section {% endcomment %}
+
+    <section id='contact' class='contact spacing'>  
+      <span class="title-shadow" style="text-align: center;">Contact</span>
+      <h2 class="title-text"> Contact Me </h2>
+
+      
+      <div class="contact-box container-fluid px-2 px-sm-5">
+
+        <div class="row">
+
+          <div class="contact-form col-lg-6">
+              
+            <h3>Send To Me</h3>
+
+            <form action="" method="post">
+              {% csrf_token %}
+
+              {{ form.name }}
+              {{ form.name.errors }}
+
+              {{ form.email }}
+              {{ form.email.errors }}
+
+              {{ form.message }}
+              {{ form.message.errors }}
+              
+
+
+              <input type="submit" class="form-submit" value="Send Message" onclick="online_offline()">
+
+
+  
+            </form>
+
+          </div>
+
+          <div class="contact-info col-6">
+          
+            <div class="info-box">
+
+              <div class="info">
+                  <div class="icon">
+                      <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="addrs"> <b>Address:</b> <a href="https://www.google.com.ng/maps/place/Block 78 flat 6 jakande estate, isolo Lagos" target="_blank" > Block 78 flat 6 jakande estate, isolo Lagos. </a> </div>
+              </div>
+
+              <div class="info">
+                  <div class="icon">
+                      <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div class="addrs"> <b>Phone:</b> <a href="tel:+2348145235799"> +234 814 523 5799 </a> </div>
+              </div>
+
+              <div class="info">
+                  <div class="icon">
+                      <i class="fas fa-paper-plane"></i>
+                  </div>
+                  <div class="addrs"> <b>Email:</b> <a href="mailto:tomisinerinle4@gmail.com"> tomisinerinle4@gmail.com </a> </div>
+              </div>
+
+            </div>
+              
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <div class="container py-5">
+      <div class="row my-5">
+
+        <div class="col-12 col-lg-3 about me-4">
+          <h4 class="head-text"> About Me </h4>
+          <p class="content">
+            My name is Erinle OluwaTomisin, A Nigerian with a dream to create programs that will change the world for better. And i'm certain that with your help my dream can become a reality. <a href="#about" class="text-white fw-normal"> Read More </a>
+          </p>
+          <div class="social-links d-flex">  
+            <a href="https://wa.link/uy9c9g" target="_blank"> <i class="fa-brands fa-whatsapp"></i></a>
+            <!-- <a href="#"><i class="fa-brands fa-github"></i></a> -->
+          </div>
+
+        </div>
+
+        <div class="col-12 col-lg-2 links">
+          <h4 class="head-text"> Links </h4>
+          <ul class="content">
+            <li class="nav-item">
+              <i class="bi bi-arrow-right"></i><a class="nav-link active" href="#cover">Home</a>
+            </li>
+            <li class="nav-item">
+              <i class="bi bi-arrow-right"></i><a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <i class="bi bi-arrow-right"></i><a class="nav-link" href="#service">Service</a>
+            </li>
+            <li class="nav-item">
+              <i class="bi bi-arrow-right"></i><a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <!-- <li class="nav-item">
+              <i class="bi bi-arrow-right"></i><a class="nav-link" href="#blog">Blog</a>
+            </li> -->
+            <li class="nav-item">
+              <i class="bi bi-arrow-right"></i><a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-3 services">
+          <h4 class="head-text"> Services </h4>
+          <ul class="content">
+            <li class="nav-item">
+              <i class="bi bi-arrow-right"></i><a class="nav-link"> Web Design </a>
+            </li>
+            <li class="nav-item">
+              <i class="bi bi-arrow-right"></i><a class="nav-link"> Web Development </a>
+            </li>
+            <li class="nav-item">
+              <i class="bi bi-arrow-right"></i><a class="nav-link"> Graphics Design </a>
+            </li>
+            <li class="nav-item">
+              <i class="bi bi-arrow-right"></i><a class="nav-link"> Data Encryption </a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-3 question">
+          <h4 class="head-text"> Have a question? </h4>
+
+          <div class="contact-info content">
+          
+            <div class="info-box">
+
+              <div class="info">
+                  <div class="icon">
+                      <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="addrs"> <b>Address:</b> <a href="https://www.google.com.ng/maps/place/Block 78 flat 6 jakande estate, isolo Lagos" target="_blank" > Block 78 flat 6 jakande estate, isolo Lagos. </a> </div>
+              </div>
+
+              <div class="info">
+                  <div class="icon">
+                      <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div class="addrs"> <b>Phone:</b> <a href="tel:+2348145235799"> +234 814 523 5799 </a> </div>
+              </div>
+
+              <div class="info">
+                  <div class="icon">
+                      <i class="fas fa-paper-plane"></i>
+                  </div>
+                  <div class="addrs"> <b>Email:</b> <a href="mailto:tomisinerinle4@gmail.com"> tomisinerinle4@gmail.com </a> </div>
+              </div>
+
+            </div>
+              
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <p class="copy-right text-center mb-5">
+        This is Website Was Made & Designed By Erinle Tomisin
+      </p>
+
+    </div>
+  </footer>
+
+
+
+{% endblock content %}
+

@@ -1,0 +1,29 @@
+{% extends 'portfolio/base.html' %}
+{% block title %} Success {% endblock title %}
+
+{% block content %}
+<style>
+    body{
+        background-color: white;
+        text-transform: capitalize;
+    }
+
+    .icon{
+        text-align: center;
+        font-size: 100px;
+        color: green;
+
+        margin: auto 0;
+
+    }
+
+</style>
+<!-- <center> -->
+    <div class="container my-4">
+        <i class="bi bi-check-circle-fill icon"></i>
+        <h2 class="my-4"> {{msg|safe }} </h2>
+        <a href="{% url 'home' %}" class="text-center"> Go back to home page </a>
+    </div>
+<!-- </center> -->
+
+{% endblock %}

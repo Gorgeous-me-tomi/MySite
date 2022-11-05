@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block page_title %} T-Blog - {{author}} {% endblock page_title %}
+{% block css_link %} <link rel="stylesheet" href="{% static 'blog/personal_details.css' %}">   {% endblock css_link %}
+
+
+{% block content %}
+
+    <div class="author_details">
+        <img class="author_img" src="{{author.image.url}}" alt="">
+        <h2 class="author_name"> {{author}} </h2>
+        <span> {{author.work}} </span>
+
+
+        <p class="author_about"> {{author.about}} </p>
+
+    </div>
+
+
+    <div class="authors_post">
+        <h2 class="text-center "> Posts by {{author}}</h2>
+
+        {% for post in posts %}
+            <div class="posts">
+                <div>
+                    <a href="{%  url 'post-detail-page' post.slug  %}"> <img src="{{post.image.url}}" alt=""> </a>
+                </div>
+
+                <div>
+                    <a href="{%  url 'post-detail-page' post.slug  %}" style="text-decoration: none;"> <span class="fw-bold"> {{post.title}} </span> </a>
+                    <span>{{post.date}}</span>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+
+
+{% endblock %}
