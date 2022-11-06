@@ -12,8 +12,6 @@ $(document).ready(function(){
         
         navigator.getBattery().then(function(battery) {
             deviceBatteryLevel = Math.round(battery.level * 100)
-            console.log(battery.level)
-            console.log(deviceBatteryLevel)
             includedText = 'Just want to let you know your device battery is '
             chargingReview = ''
 
