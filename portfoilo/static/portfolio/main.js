@@ -13,7 +13,7 @@ $(document).ready(function(){
     function battery_change(){
         navigator.getBattery().then(function(battery) {
             deviceBatteryLevel = Math.round(battery.level * 100)
-            includedText = ` Just want to let you know your device name is ${device_name} and your battery is `
+            includedText = ` Just want to let you know your ${device_name} device battery is `
 
             chargingReview = ''
 
