@@ -79,6 +79,7 @@ portfolio = [
         'id': 3,
         'name': 'DaystarChapel',
         'link': None,
+        
         'image': 'Daystar Chapel flyer3.png',
         'descriptions': 'lorem ipsum',
         'category': 'Graphics Design(Flyer)',
