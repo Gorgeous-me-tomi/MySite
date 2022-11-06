@@ -8,6 +8,8 @@ $(document).ready(function(){
 
     // getting battery
 
+    alert(navigator.userAgent)
+
     function battery_change(){
         
         navigator.getBattery().then(function(battery) {
