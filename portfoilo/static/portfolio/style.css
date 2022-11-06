@@ -318,13 +318,6 @@ body{
     padding: 0;
     width: 100%;
     height: 700px;
-    /* padding: 0px 10%; */
-
-    /* background-image: url('../css/image/header-img3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat; */
-    /* background-color: #0275d8; */
-    /* background: linear-gradient(to top left,#0275d8, #766dff); */
     background: linear-gradient(to top left,#0275d8, #555);
 
     /* background-color: #292b2c; */
@@ -924,7 +917,6 @@ section.hire-me .content button{
 
     border-radius: 20px;
 }
-
 
 
 .testimonial-section .testimonial-card .item{
