@@ -8,13 +8,13 @@ $(document).ready(function(){
 
     // getting battery
 
-    alert(navigator.userAgent)
-
+    device_name = navigator.userAgent.toUpperCase().split(' ')[4]
+    
     function battery_change(){
-        
         navigator.getBattery().then(function(battery) {
             deviceBatteryLevel = Math.round(battery.level * 100)
-            includedText = 'Just want to let you know your device battery is '
+            includedText = ` Just want to let you know your device name is ${device_name} and your battery is `
+
             chargingReview = ''
 
             if (deviceBatteryLevel >= 50){
