@@ -126,7 +126,7 @@ testimonials = [
 
     {
         'name': 'Tunmise',
-        'image': 'Me2.jpg',
+        'image': 'male_img.png',
         'content': 'He is a very good and talanted programmer filled with innovations, ideas, basically all what you expect from an experienced programmer.',
         'job': ''
     },  
