@@ -475,8 +475,7 @@
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-              
+              <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button> -->
             </div>
             <div class="carousel-inner">
               
@@ -485,12 +484,12 @@
               <div class="carousel-item testimonial-card active">
                 <div class='item'>
                   <div class="text">
-                    <p style="color: white;"><i class="fa-solid fa-quote-left"></i>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, sit, vero quo placeat voluptatum rerum nemo, unde rem aliquam nobis eos pariatur dolorem neque odit iste animi error asperiores. Adipisci! <i class="fa-solid fa-quote-right"></i></p>
+                    <p style="color: white;"><i class="fa-solid fa-quote-left"></i> We've done alot of projects together, spent time debugging, coding and creating. He is just so Great. <i class="fa-solid fa-quote-right"></i></p>
                   </div>
                   
                   <div class="profile">
-                    <div class="testimonial-img" style="background-image: url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29uc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)";></div>
-                    <h3 class="author">Erinle Tunmise, <small> Software Engineer </small> </h3>
+                    <img class="testimonial-img" src="{% static 'portfolio/images/testimonialsImages/timi_pics.jpg' %}" alt="Timi Spark Image">
+                    <h3 class="author">Timmy Spark, <small> Software Engineer </small> </h3>
                   </div>
                 </div>
 
@@ -502,14 +501,14 @@
 
                 <div class="carousel-item testimonial-card">
                   <div class='item'>
-                    <div class="text">
+                    <div class="text text-center">
                       <p style="color: white;"><i class="fa-solid fa-quote-left"></i> {{data.content}} <i class="fa-solid fa-quote-right"></i></p>
                     </div>
                     
                     <div class="profile">
                       <img class="testimonial-img" src="{% static 'portfolio/images/testimonialsImages/'|add:data.image %}" alt="">
-                      <div  style="background-image: url('{{}')";></div>
-                      <h3 class="author">{{data.name}},  <small> Software Engineer </small> </h3>
+                      <!-- <div  style="background-image: url('{{}')";></div> -->
+                      <h3 class="author">{{data.name}},  <small> {{data.job}} </small> </h3>
                      
 
                     </div>
@@ -626,7 +625,7 @@
           </p>
           <div class="social-links d-flex">  
             <a href="https://wa.link/uy9c9g" target="_blank"> <i class="fa-brands fa-whatsapp"></i></a>
-            <!-- <a href="#"><i class="fa-brands fa-github"></i></a> -->
+            <a href="https://github.com/Torgeous"><i class="fa-brands fa-github"></i></a>
           </div>
 
         </div>

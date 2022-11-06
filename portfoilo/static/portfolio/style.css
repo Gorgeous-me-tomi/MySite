@@ -957,7 +957,7 @@ section.hire-me .content button{
 .testimonial-section .testimonial-card .profile .testimonial-img {
     width: 90px;
     height: 90px;
-    border-radius: 50%;
+    border-radius: 100%;
     border: 3px solid #555;
     background-size: cover;
     background-repeat: no-repeat;

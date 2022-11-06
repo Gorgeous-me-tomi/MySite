@@ -79,7 +79,6 @@ portfolio = [
         'id': 3,
         'name': 'DaystarChapel',
         'link': None,
-        
         'image': 'Daystar Chapel flyer3.png',
         'descriptions': 'lorem ipsum',
         'category': 'Graphics Design(Flyer)',
@@ -111,30 +110,27 @@ portfolio = [
 
 testimonials = [
 
+     {
+        'name': 'Desmond',
+        'image': 'Desmond-img.png',
+        'content': 'I once taught Him, He is very good at assimilation, quick learner also filled with a lot of breath taking ideas.',
+        'job': 'FullStack Developer'
+    },
+
     {
-        'name': 'Timmy',
-        'image': 'Me2.jpg',
-        'content': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, sit, vero quo placeat voluptatum      rerum nemo, unde rem aliquam nobis eos pariatur dolorem neque odit iste animi error asperiores. Adipisci!',
+        'name': 'Tobi',
+        'image': 'Tobi-Img.png',
+        'content': 'He is just from a different world.',
+        'job': 'Application Developer',
     },
 
     {
         'name': 'Tunmise',
         'image': 'Me2.jpg',
-        'content': 'He is a very good and talanted programmer filled with innovations, ideas, basically all you expect from an experienced programmer.'
+        'content': 'He is a very good and talanted programmer filled with innovations, ideas, basically all what you expect from an experienced programmer.',
+        'job': ''
     },  
 
-    {
-        'name': 'Tobi',
-        'image': 'Tobi-Img.png',
-        'content': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, sit, vero quo placeat voluptatum rerum nemo, unde rem aliquam nobis eos pariatur dolorem neque odit iste animi error asperiores. Adipisci!',
-    },
-
-
-    {
-        'name': 'Desmond',
-        'image': 'Me2.jpg',
-        'content': 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, sit, vero quo placeat voluptatum rerum nemo, unde rem aliquam nobis eos pariatur dolorem neque odit iste animi error asperiores. Adipisci!',
-    },
 
 ]
 
