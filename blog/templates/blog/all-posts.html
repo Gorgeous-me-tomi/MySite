@@ -70,7 +70,7 @@
 
         <div class="col-12 col-lg-8 mt-4"> 
             <div class="row">
-                {% if all_posts.exists %}
+                <!-- {% if all_posts.exists %} -->
                     {% for post in all_posts %}
                         <div class="col-12 col-lg-6">
                             <div class="my-card">
@@ -120,7 +120,7 @@
                         </div>
                     {% endfor %}
 
-                {% else %}
+                <!-- {% else %} -->
                     <hr>
                     <strong class="text-danger mb-3 d-block"> Sorry did not find posts relating to <del>{{query}}</del>  </strong>
                     <span class="d-block fw-bold">Try:</span>
@@ -132,7 +132,7 @@
                     </ul>
                     <hr>
                         
-                {% endif %}
+                <!-- {% endif %} -->
             </div>
         </div>
 
