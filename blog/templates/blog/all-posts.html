@@ -70,6 +70,7 @@
 
         <div class="col-12 col-lg-8 mt-4"> 
             <div class="row">
+                {% if all_posts.exists %}
                     {% for post in all_posts %}
                         <div class="col-12 col-lg-6">
                             <div class="my-card">
@@ -119,7 +120,19 @@
                         </div>
                     {% endfor %}
 
-              
+                {% else %}
+                    <hr>
+                    <strong class="text-danger mb-3 d-block"> Sorry did not find posts relating to <del>{{query}}</del>  </strong>
+                    <span class="d-block fw-bold">Try:</span>
+                    <ul class="mt-3 mb-5 " style="list-style-type: none;">
+                        <li>Make sure words are spelt correctly.</li>
+                        <li> Try Searching for keywords rather than contents. </li>
+                        <!-- <li><strong class="text-danger"> Sorry did not find the result of the data  </strong></li> -->
+
+                    </ul>
+                    <hr>
+                        
+                {% endif %}
             </div>
         </div>
 
