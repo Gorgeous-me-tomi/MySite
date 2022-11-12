@@ -6,11 +6,20 @@ from django.views import View
 from .forms import ContactForm
 from blog import *
 
+def get_ip():
+    try:
+        response = requests.get('https://api64.ipify.org?format=json').json()
+        return response["ip"]
+    except:
+        return 'Failed to load'
+
 def get_country_flag():
     try:
-        country_response = requests.get('http://ip-api.com/json/?fields=status,message,country,countryCode').json()
-        country = country_response['country']
-        country_code = country_response['countryCode']
+        ip_address = get_ip()
+        # country_response = requests.get('http://ip-api.com/json/?fields=status,message,country,countryCode').json()
+        country_response = requests.get(f'https://ipapi.co/{ip_address}/json/').json()
+        country = country_response['country_name']
+        country_code = country_response['country_code']
         flag_response = requests.get(f'https://countryflagsapi.com/svg/{country}').text
         return (flag_response, country, country_code)
     except:
