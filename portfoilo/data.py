@@ -50,7 +50,7 @@ portfolio = [
     {
         'id': 1,
         'name': 'T-Sketch',
-        'link': 'https://jumia.com',
+        'link': 'https://t-sketch-app.herokuapp.com/',
         'image': 't-sketch-screenshot.PNG',
         'descriptions': 'lorem ipsum',
         'category': 'Web Application',
@@ -60,7 +60,7 @@ portfolio = [
     {
         'id': 2,
         'name': 'T-Blog',
-        'link': 'blog',
+        'link': 'https://tomisinerinle.herokuapp.com/blog',
         'image': 'T-Blog.PNG' ,
         'descriptions': 'lorem ipsum',
         'category': 'Web Application',
