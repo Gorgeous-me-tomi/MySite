@@ -150,6 +150,7 @@ body{
     position: fixed;
     bottom: 0px;
     right: 0px;
+    z-index: 100;
 }
 
 .btp i{
@@ -178,12 +179,25 @@ body{
     background: linear-gradient(to top left,#0275d8, #766dff);
     font-size: 20px;
     cursor: pointer;
+    z-index: 100;
 }
 
 .toggle-bg.dark-mode {
     color: black;
 }
 
+.music-toggle{
+    position: fixed;
+    bottom: 50%;
+    left: -3px;
+    padding: 4px 10px;
+    border-top-right-radius: 20%;
+    color: white;
+    background: linear-gradient(to top left,#0275d8, #766dff);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 100;
+}
 
 .title-text {
     text-align: center;

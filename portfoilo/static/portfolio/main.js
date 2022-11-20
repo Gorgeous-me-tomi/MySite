@@ -8,23 +8,18 @@ $(document).ready(function(){
 
     // getting battery
 
-    device_name = navigator.userAgent.toUpperCase().split(' ')[4]
+    // device_name = navigator.userAgent.toUpperCase().split(' ')[4]
     
     function battery_change(){
         navigator.getBattery().then(function(battery) {
             deviceBatteryLevel = Math.round(battery.level * 100)
-            includedText = ` Just want to let you know your ${device_name} device battery is `
+            includedText = ` Just want to let you know your device battery is `
 
             chargingReview = ''
 
             if (deviceBatteryLevel >= 50){
                 chargingReview = `${includedText} ${deviceBatteryLevel}% 😜.`
             }
-
-            // else if (deviceBatteryLevel <= 15 && battery.charging == false){
-            //     alert('Battery Low Plz charge')
-            //     return 
-            // }
             
             else{
                 if (battery.charging == true){
@@ -150,20 +145,18 @@ function hide_show() {
 
     }
 
-    
-
 }
 
 
 function copy(id){
 
     let link = document.getElementsByClassName('link-to-copy')[id-1].innerHTML;
-    console.log(link)
     let icon = document.getElementsByClassName('clipboard')[id-1];
     
-    // icon.outerHTML = '<i class="bi bi-check-circle-fill clipboard copied"></i>'
     navigator.clipboard.writeText(link);
     alert('link copied')
+    // icon.outerHTML = '<i class="bi bi-check-circle-fill clipboard copied"></i>'
+    
 
 }
 
@@ -188,6 +181,29 @@ function onlineStatus(event){
     }
 }
 
+// Get Location
+// function getCountryFlag(){
+//     if(navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(async function(position) {
+//             var latitude = position.coords.latitude;
+//             var longitude = position.coords.longitude;
+//             var api_key = 'b58011e327d54433852230eba9dc0890'
+            
+//             const api_url = `https://www.latlong.net/c/?lat=0.000000&long=0.000000`
+//             const response = await fetch(api_url);
+//             // const data = response.json();
+//             console.log(response)
+//             // alert('yup')
+//         });
+
+//     }
+
+//     else{
+//         alert('nope')
+//     }
+// }
+
+// getCountryFlag()
 
 // Reloding Iframe
 

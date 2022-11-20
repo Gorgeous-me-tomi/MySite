@@ -47,14 +47,14 @@
               <!-- <li> <a class="dropdown-item" href="/blog" target="_blank"> Check out my blog </a> </li> -->
               <li> <a class="dropdown-item" href="#portfolio" > View my projects </a> </li>
               <li> <a class="dropdown-item" href="{{random_portfolio_link}}" title="{{random_portfolio_link}}" target="_blank"> View random project</a> </li>
-
+              <li> <a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#musicModal"> Play Music </a> </li>
               <li> <a class="dropdown-item" href="" onclick="location.reload()"><i class="bi bi-arrow-clockwise fs-5"></i>Reload Page</a></li>
           </ul>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link flag" href="https://en.wikipedia.org/wiki/{{country_name}}" target="_blank" title="About your Country -> {{country_name}}"> {{country_pic|safe}} {{country_code}} </a>
-          </li>
+          </li> -->
 
 
       </div>
@@ -106,13 +106,63 @@
     <i class="bi bi-brightness-high-fill toggle-bg"></i>
   </div>
 
+  <!-- Music Toggle -->
+  <div> 
+    <i class="bi bi-music-note-beamed music-toggle" data-bs-toggle="modal" data-bs-target="#musicModal"></i>
+  </div>
+
+  
+  <!-- Music Modal -->
+  <div class="modal fade" id="musicModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Music Controller</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+
+          <div class="text-center">
+            <h5 class="selected-music"> Control for selected music</h5>
+            <audio id="sound" controls></audio>
+          </div>
+
+          <div class="mt-3">
+            <h5>Select A Music</h5>
+            <input type="file" id="upload" accept="audio/mp3" />
+          </div>
+    
+    
+          <script type="text/javascript">
+
+              function playMusic(){
+                document.getElementById("upload").addEventListener('input', (music) => {
+                  // console.log(music.target.files);
+                  if (music.target.files.length) {
+                    document.getElementById("sound").src=URL.createObjectURL(music.target.files[0]);
+                    document.getElementById("sound").play();
+                    document.getElementsByClassName('selected-music')[0].innerHTML = `Controls for ${music.target.files[0]['name']}`
+                  }
+
+                  else{
+                    document.getElementsByClassName('selected-music')[0].innerHTML = `A music file was not uploaded correctly.`
+                  }
+                  
+                });
+              }
+
+              playMusic()
+
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Cover -->
   <section id="cover">
-
       
     <div class="cover-container row">
-      
 
       <div class="col mt-5">
         <h2 style="font-size: 50px;" class="text-light">Hi,</h2>

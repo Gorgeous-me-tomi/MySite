@@ -1,10 +1,12 @@
+import os
 import requests
 from django.shortcuts import render
 from django.views import View
-
+from dotenv import load_dotenv
 
 from .forms import ContactForm
 from blog import *
+load_dotenv()
 
 def get_ip():
     try:
@@ -75,7 +77,7 @@ class PortfolioView(View):
 
             user_name = form.cleaned_data['name']
             my_email = "gorgeoustomisin@gmail.com"
-            password = "wappucglnhtfimbm"
+            password = os.getenv("password")
             receiver_email = 'tomisinerinle4@gmail.com'
             msg_to_send = f"Name: {user_name}, \n User Email: {form.cleaned_data['email']}, \n Message: {form.cleaned_data['message']} \n country: {get_country_flag()[1]} "
             
