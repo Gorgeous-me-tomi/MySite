@@ -21,7 +21,14 @@
 <!-- <center> -->
     <div class="container my-4">
         <i class="bi bi-check-circle-fill icon"></i>
-        <h2 class="my-4"> {{msg|safe }} </h2>
+        <h2 class="my-4"> 
+            Thank You Mr/Mrs {{user_name}},</br>
+            For trying me out,</br>
+            A message have been sent to <small>{{user_email|lower}}</small>  <br>
+            I will try to get back to you as soon as i see your message, <br>
+
+            Once again thank you for choosing Me.    
+        </h2>
         <a href="{% url 'home' %}" class="text-center"> Go back to home page </a>
     </div>
 <!-- </center> -->

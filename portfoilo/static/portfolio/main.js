@@ -165,7 +165,7 @@ function copy(id){
 window.addEventListener('online',  onlineStatus);
 window.addEventListener('offline',  onlineStatus);
 
-function onlineStatus(event){
+function onlineStatus(){
     var elem = $('.form-submit')
 
     if(navigator.onLine == false){
@@ -179,6 +179,14 @@ function onlineStatus(event){
         elem.removeAttr('disabled');
         elem.css({"cursor": "pointer"})
     }
+}
+
+
+function chosenService(obj){
+    var textArea = document.getElementById('id_message')
+    let service = obj.innerHTML
+    let userText = textArea.value
+    textArea.value = `I Want Your ${service} Service\n ${userText}`
 }
 
 // Get Location

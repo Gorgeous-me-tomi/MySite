@@ -79,7 +79,7 @@ class PortfolioView(View):
             my_email = "gorgeoustomisin@gmail.com"
             password = os.getenv("password")
             receiver_email = 'tomisinerinle4@gmail.com'
-            msg_to_send = f"Name: {user_name}, \n User Email: {form.cleaned_data['email']}, \n Message: {form.cleaned_data['message']} \n country: {get_country_flag()[1]} "
+            msg_to_send = f"Name: {user_name}, \n User Email: {form.cleaned_data['email']}, \n Message: {form.cleaned_data['message']}"
             
             try:
 
@@ -90,15 +90,7 @@ class PortfolioView(View):
                         from_addr = my_email,
                         to_addrs = receiver_email,
                         msg = f"Subject: {user_name} Contacting Me \n\n {msg_to_send}")
-
-                success_msg = f"""
-                                Thank You Mr/Mrs {user_name},</br>
-                                For trying me out,</br>
-                                I will try to get back to you as soon as i see your message,
-
-                                Once again thank you for choosing Me.
-                            """
-                return render(request, 'portfolio/success.html', {'msg': success_msg})
+                return render(request, 'portfolio/success.html', {'user_name': user_name, 'user_email': form.cleaned_data['email']})
 
             except:
                 return render(request, 'portfolio/error.html', {'msg': 'Something came up while connecting to the server.'})
