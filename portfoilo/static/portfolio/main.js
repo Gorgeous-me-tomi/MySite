@@ -154,7 +154,8 @@ function copy(id){
     let icon = document.getElementsByClassName('clipboard')[id-1];
     
     navigator.clipboard.writeText(link);
-    alert('link copied')
+    // alert('link copied')
+    $('.copy-toast').toast('show');
     // icon.outerHTML = '<i class="bi bi-check-circle-fill clipboard copied"></i>'
     
 

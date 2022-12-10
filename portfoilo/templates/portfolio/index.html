@@ -5,6 +5,106 @@
 {% block title %} Erinle Tomisin {% endblock title %}
 
 {% block content %}
+  <div class="loader-container">
+    <div class="loader">Loading...</div>
+  </div>
+  <style>
+
+  .loader-container{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    z-index: 999999;
+
+  }
+
+  .loader {
+    color: #ffffff;
+    font-size: 90px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: 72px auto;
+    position: relative;
+    top: 48%;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+@-webkit-keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@-webkit-keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+  </style>
 
   <header id="header" class="header">
 
@@ -65,12 +165,28 @@
   <!-- ErrorBox -->
 
   {% if form.errors %}
-    <div class="error-box" onclick="this.style.display='none'">
+
+  <div class="toast fade show bg-danger" data-autohide="false" style="position: fixed; top: 100px; right: 0; z-index: 100;">
+    <div class="toast-header" style="display: flex; justify-content:space-between;">
+      <strong class="mr-auto text-dark">Error</strong>
+      <button type="button" class="btn-close text-end" data-bs-dismiss="toast" aria-label="Close"></button>
+      <!-- <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button> -->
+    </div>
+
+    <div class="toast-body text-light">
+      <strong class="error_msg">The Form you submitted was invalid.</strong> 
+      <a class="btn btn-outline-light" href="#contact">Fix!</a>
+      
+      <!-- <small> Click on any part of the box to close this box </small>    -->
+    </div>
+  </div>
+
+    <!-- <div class="error-box" onclick="this.style.display='none'">
       <div>
         <p class="error_msg">The Form you submitted was invalid.<br><a href="#contact">Fix!</a></p> 
         <small> Click on any part of the box to close this box </small>
       </div>
-    </div>
+    </div> -->
   {% endif %}
 
 
@@ -493,7 +609,26 @@
 
       </div>
       
+      <!-- Copy Toast -->
 
+      
+
+      <div class="toast-container p-3" style="position: fixed; bottom: 0; right: 0; ">
+      
+        
+        <!-- Then put toasts within -->
+        <div class="toast copy-toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-body" style="background-color: aquamarine; display: flex; justify-content: space-between;">
+            <strong> Link Copied </strong>
+            <button type="button" class="btn-close text-end" data-bs-dismiss="toast" aria-label="Close"></button>
+
+          </div>
+        </div>
+        
+    
+       
+      </div>
+    
 
     </section>
 
