@@ -1,0 +1,33 @@
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #555;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.btp{
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+}
+
+.btp i{
+  padding: 8px 10px;
+  color: white;
+  /* background: linear-gradient(to top left,#0275d8, #766dff); */
+  background-color: black;
+
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 100%;
+
+}

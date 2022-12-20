@@ -1,0 +1,248 @@
+/* body{
+    background-color: red;
+} */
+
+.second-nav{
+    /* background-color: #555; */
+    width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+
+}
+
+.second-nav .link{
+
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 20px;
+    /* color: white; */
+}
+
+.second-nav .link  a{
+    color: #555;
+}
+
+.blog-area{
+    padding-right: 100px;
+}
+
+.blog-area .author_info{
+    margin-top: 50px;
+    margin-bottom: 30px;
+
+}
+
+.blog-area .author_info .info .author-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    float: left;
+    margin-right: 15px;
+}
+
+.blog-area .author_info .info .author-name{
+    line-height: 2;
+    /* font-weight: 20; */
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
+.blog-area .author_info .info .blog-prop span{
+    color: #555;
+    display: block;
+    /* margin-right: 10px; */
+}
+
+/* blog title */
+
+.blog-area .blog-title{
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* blog tags */
+.blog-tags a{
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 17px;
+}
+
+/* blog img */
+.blog-area .blog-img{
+    width: 100%;
+    height: 400px;
+    margin-top: 30px;
+}
+
+/* blog content */
+.blog-area .blog-content{
+    width: 100%;
+    margin-top: 50px;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.003em;
+}
+
+
+/* Comment */
+
+#comments{
+    margin: 3rem auto;
+    width: 100%;
+    background-color: white;
+    border: 1px solid black;
+    /* box-shadow: 0 2px 8px rgba(119, 119, 119, 0.25); */
+    padding: 2rem 1rem;
+}
+
+#comments h2{
+    color: #555;
+    font-size: 30px;
+}
+
+#comments ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#comment li{
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ccc;
+}
+
+#comment li:last-of-type{
+    border-bottom: none;
+}
+
+/* Comment Form */
+
+#comment-form{
+    margin: 3rem auto;
+    width: 100%;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(119, 119, 119, 0.25);
+    padding: 2rem 1rem;
+}
+
+
+.my-form-control{
+    margin-bottom: 2rem;
+}
+
+.my-form-control label{
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.my-form-control input,
+.my-form-control textarea{
+
+    display: block;
+    width: 100%;
+    padding: 0.25rem;
+    /* border-radius: 6px; */
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+
+}
+
+
+/* Form Errors */
+
+.my-form-control .errorlist{
+    list-style-type: none;
+    margin: 0.5rem 0;
+    padding: 0;
+    color: #d6000b;
+}
+
+.my-form-control.error label{
+    color: #d6000b;
+}
+
+.my-form-control.error input,
+.my-form-control.error textarea{
+    border-bottom-color: #d6000b;
+}
+
+.error_alert{
+    border: 1px solid #d6000b;
+    background-color: #e9d2d3;
+    padding: 1rem;
+}
+
+
+/* Side Bar */
+
+.side-bar{
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.5); */
+    box-shadow: 5px 5px 20px rgba(119, 119, 119, 0.1);
+    height: fit-content;
+
+}
+
+.side-bar .author-info{
+    padding: 0 20px;
+
+}
+
+.side-bar .author-info .author-img{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 100%;
+}
+
+.side-bar .author-info .author-name{
+    display: block;
+    font-weight: 600;
+    font-size: 23px;
+    color: black;
+    text-decoration: none;
+}
+
+.side-bar .author-info .author-prof{
+    color: #555;
+    line-height: 2;
+
+    /* letter-spacing: 1.7px; */
+}
+
+.side-bar .author-info .author-about{
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+.posts_frm_author{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.posts_frm_author img{
+    width: 90px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.posts_frm_author span{
+    display: block;
+    color: black;
+}
+
+
+@media (max-width: 991px) {
+    .blog-area{
+        padding: 0px 20px;
+    }
+}
+
