@@ -1,14 +1,19 @@
+if (navigator.onLine == false){
+    document.write('No internet connection, pls connect to the internet to load my portfolio')
+    
+}
+
 $(document).ready(function(){
 
+    setTimeout(function(){
+        $('.loader_bg').animate({width: '100%'}, 'slow');
+        $('.loader_bg').animate({width: '0%'}, 'slow');
 
-    // Scrolling automatically
-    // window.scrollTo(0, 0);
+        // $(".loader_bg").css({"display": 'none'});
+        $("#loader").css({"display": 'none'});
+    }, 2000);
 
-    // $(".wrapperanimate").fadeOut();
-
-    // getting battery
-
-    // device_name = navigator.userAgent.toUpperCase().split(' ')[4]
+    
     
     function battery_change(){
         navigator.getBattery().then(function(battery) {
@@ -49,8 +54,6 @@ $(document).ready(function(){
 
 
     battery_change()
-    
-    
 
 
     // bootstrap modal show
@@ -169,16 +172,19 @@ window.addEventListener('offline',  onlineStatus);
 function onlineStatus(){
     var elem = $('.form-submit')
 
+
     if(navigator.onLine == false){
         elem.attr('value', 'You are currently offline');
         elem.attr('disabled', '');
-        elem.css({"cursor": "not-allowed"})
+        elem.css({"cursor": "not-allowed"})       
     }
 
     else{
         elem.attr('value', 'Send Message');
         elem.removeAttr('disabled');
-        elem.css({"cursor": "pointer"})
+        elem.css({"cursor": "pointer"});
+      
+
     }
 }
 
