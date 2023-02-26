@@ -1,59 +1,51 @@
-if (navigator.onLine == false){
-    document.write('No internet connection, pls connect to the internet to load my portfolio')
-    
-}
-
 $(document).ready(function(){
-
-    setTimeout(function(){
-        $('.loader_bg').animate({width: '100%'}, 'slow');
-        $('.loader_bg').animate({width: '0%'}, 'slow');
-
-        // $(".loader_bg").css({"display": 'none'});
-        $("#loader").css({"display": 'none'});
-    }, 2000);
-
     
-    
-    function battery_change(){
-        navigator.getBattery().then(function(battery) {
-            deviceBatteryLevel = Math.round(battery.level * 100)
-            includedText = ` Just want to let you know your device battery is `
+    try{
+        function battery_change(){
+            navigator.getBattery().then(function(battery) {
+                deviceBatteryLevel = Math.round(battery.level * 100)
+                includedText = ` Just want to let you know your device battery is `
 
-            chargingReview = ''
+                chargingReview = ''
 
-            if (deviceBatteryLevel >= 50){
-                chargingReview = `${includedText} ${deviceBatteryLevel}% 😜.`
-            }
-            
-            else{
-                if (battery.charging == true){
-                chargingReview = `${includedText} ${deviceBatteryLevel}% kind of low but i'm happy it's charging 😊`
+                if (deviceBatteryLevel >= 50){
+                    chargingReview = `${includedText} ${deviceBatteryLevel}% 😜.`
                 }
                 
                 else{
-                chargingReview = `${includedText} ${deviceBatteryLevel}% kind of low and not currently charging. Please charge 😊`
+                    if (battery.charging == true){
+                    chargingReview = `${includedText} ${deviceBatteryLevel}% kind of low but i'm happy it's charging 😊`
+                    }
+                    
+                    else{
+                    chargingReview = `${includedText} ${deviceBatteryLevel}% kind of low and not currently charging. Please charge 😊`
+                    }
+                    
                 }
-                
-            }
 
-            $('.battery-status-review').html(chargingReview)
+                $('.battery-status-review').html(chargingReview)
 
-            battery.onlevelchange = () => {
-                battery_change()
-            }
-    
-            battery.addEventListener('chargingchange', () => {
-                battery_change()
+                battery.onlevelchange = () => {
+                    battery_change()
+                }
+        
+                battery.addEventListener('chargingchange', () => {
+                    battery_change()
+                });
+
             });
 
-        });
+            
+        }
 
-        
+        battery_change()
+
     }
 
+    catch(err) {
+        console.log('Error getting device battery')
+    }
 
-    battery_change()
 
 
     // bootstrap modal show
@@ -154,7 +146,7 @@ function hide_show() {
 function copy(id){
 
     let link = document.getElementsByClassName('link-to-copy')[id-1].innerHTML;
-    let icon = document.getElementsByClassName('clipboard')[id-1];
+    // let icon = document.getElementsByClassName('clipboard')[id-1];
     
     navigator.clipboard.writeText(link);
     // alert('link copied')
@@ -169,21 +161,35 @@ function copy(id){
 window.addEventListener('online',  onlineStatus);
 window.addEventListener('offline',  onlineStatus);
 
+var internetInterval;
 function onlineStatus(){
-    var elem = $('.form-submit')
+    var elem = $('.form-submit') 
 
 
     if(navigator.onLine == false){
+
         elem.attr('value', 'You are currently offline');
         elem.attr('disabled', '');
-        elem.css({"cursor": "not-allowed"})       
+        elem.css({"cursor": "not-allowed"}) 
+
+        internetInterval = setInterval(toggleInternetBar, 1200);
+        function toggleInternetBar(){
+            $('.internet-toggle').fadeIn("slow")
+            $('.internet-toggle').fadeOut("slow")
+    
+        }
+        
     }
 
     else{
+
+        clearInterval(internetInterval);
+
+        $('.internet-toggle').fadeOut("slow")
+
         elem.attr('value', 'Send Message');
         elem.removeAttr('disabled');
         elem.css({"cursor": "pointer"});
-      
 
     }
 }
