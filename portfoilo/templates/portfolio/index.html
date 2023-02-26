@@ -5,32 +5,25 @@
 {% block title %} Erinle Tomisin {% endblock title %}
 
 {% block content %}
+
+<!-- Preloader  -->
 <div class="loader_bg">
   <div id="loader"> 
-    <div class="spinner-border w-90" role="status" style="height: 100px; width: 100px;">
-      <!-- <span class="sr-only">Loading...</span> -->
-    </div>
+    <div class="spinner-border w-90" role="status" style="height: 100px; width: 100px;"></div>
   </div>
 </div>
 
-  <style>
-    .loader_bg{
-      display: flex;
-      position: fixed;
-      z-index: 999999;
-      background: black;
-      width: 100%;
-      height: 100%;
-    }
-    #loader{
-      /* text-align: center; */
-      font-weight: bolder;
-      font-size: 50px;
-      color: #766dff;
-      margin: auto;
-    }
-    
-  </style>
+<script>
+  setTimeout(function(){
+        $('.loader_bg').animate({width: '100%'}, 'slow');
+        $('.loader_bg').animate({width: '0%'}, 'slow');
+
+        // $(".loader_bg").css({"display": 'none'});
+        $("#loader").css({"display": 'none'});
+    }, 2000);
+</script>
+
+<!-- ---- -->
 
   <header id="header" class="header">
 
@@ -43,6 +36,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ms-auto">
+          <button class="navbar-toggler mb-4" style="border: none; outline: none;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-x-circle-fill text-light" style="font-size: 30px;"></i>
+         </button>
+
           <li class="nav-item">
             <a class="nav-link active" href="#cover">Home</a>
           </li>
@@ -154,9 +151,11 @@
   </div>
 
   <!-- Offline Indicator -->
-  <!-- <div> 
-    <i class="fa-solid fa-ban internet-toggle p-2 text-danger"></i>
-  </div> -->
+  <div> 
+
+    <!-- <i class="bi bi-slash-circle internet-toggle p-2 text-danger" style="display: none;"></i> -->
+    <i class="fa-solid fa-ban internet-toggle p-2 text-danger" style="display: none;"></i>
+  </div>
 
   
   <!-- Music Modal -->
@@ -816,7 +815,7 @@
 
 
       <p class="copy-right text-center mb-5">
-        This is Website Was Made & Designed By Erinle Tomisin
+        This is Website Was Made & Designed <strong> Erinle Tomisin </strong>.
       </p>
 
     </div>
