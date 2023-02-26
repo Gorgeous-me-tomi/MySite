@@ -81,19 +81,19 @@ class PortfolioView(View):
             receiver_email = 'tomisinerinle4@gmail.com'
             msg_to_send = f"Name: {user_name}, \n User Email: {form.cleaned_data['email']}, \n Message: {form.cleaned_data['message']}"
             
-            try:
+        # try:
 
-                with smtplib.SMTP("smtp.gmail.com") as connection:
-                    connection.starttls()
-                    connection.login(user=my_email, password=password)
-                    connection.sendmail(
-                        from_addr = my_email,
-                        to_addrs = receiver_email,
-                        msg = f"Subject: {user_name} Contacting Me \n\n {msg_to_send}")
-                return render(request, 'portfolio/success.html', {'user_name': user_name, 'user_email': form.cleaned_data['email']})
+            with smtplib.SMTP("smtp.gmail.com") as connection:
+                connection.starttls()
+                connection.login(user=my_email, password=password)
+                connection.sendmail(
+                    from_addr = my_email,
+                    to_addrs = receiver_email,
+                    msg = f"Subject: {user_name} Contacting Me \n\n {msg_to_send}")
+            return render(request, 'portfolio/success.html', {'user_name': user_name, 'user_email': form.cleaned_data['email']})
 
-            except:
-                return render(request, 'portfolio/error.html', {'msg': 'Something came up while connecting to the server.'})
+            # except:
+            #     return render(request, 'portfolio/error.html', {'msg': 'Something came up while connecting to the server.'})
 
         
         return render(request, 'portfolio/index.html', {
