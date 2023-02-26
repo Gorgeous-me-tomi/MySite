@@ -596,7 +596,7 @@ section.hire-me .content button{
 #service .experties .column {
     display: flex;
     justify-content: center;
-    margin-bottom: 12rem;
+    margin-bottom: 6rem;
 }
 
 #service .experties .card{
@@ -651,7 +651,7 @@ section.hire-me .content button{
 
 #service .toggle-view{
     position: relative;
-    top: -120px;
+    top: -20px;
     border: none;
 }
 
