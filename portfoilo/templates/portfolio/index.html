@@ -638,33 +638,7 @@
 
     {% comment %} Blog Section {% endcomment %}
 
-      <section id='blog' class='blog spacing'>
-        <span class="title-shadow" style="text-align: center;">Blog</span>
-        <h2 class="title-text"> Some of my recent posts</h2>
-        <div class='px-2 px-sm-5'>
-          <div class='row blog-row '>
-            {% for post in blog_posts %}
-              <div class='col-12 col-lg-4 blog-card'> 
-                <div class='first-row'>
-                  <div class='img' style='background-image: url({{post.image.url}})'></div>
-                  <p class='title'> {{post.title}} </p>
-                  <div class='info'>
-                    <span><i class="bi bi-calendar"></i> {{post.date}} </span> 
-                  </div>
-                </div>
-                <div class='second-row'>
-                  <p class='content'>
-                    {{ post.excerpt }}
-                  </p>
-                  <a href='blog/posts/{{post.slug}}' target="_blank"> Continue reading </a>
-                </div>
-              </div>
-            {% endfor %}
-          
-          </div>
-        </div>
-    </section> 
-
+     
     
     {% comment %} Contact Section {% endcomment %}
 
@@ -696,7 +670,7 @@
 
 
               <!-- <input type="submit" class="form-submit" value="Send Message"> -->
-              <input type="button" class="form-submit" value="Sending a Message through this medium is currently unavaliable" disabled>
+              <input type="submit" class="form-submit" value="Sending a Message through this medium is currently unavaliable">
 
 
 
