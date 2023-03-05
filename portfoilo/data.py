@@ -57,14 +57,14 @@ portfolio = [
 
     },
 
-    {
-        'id': 2,
-        'name': 'T-Blog',
-        'link': 'https://tomisinerinle.herokuapp.com/blog',
-        'image': 'T-Blog.PNG' ,
-        'descriptions': 'lorem ipsum',
-        'category': 'Web Application',
-    },    
+    # {
+    #     'id': 2,
+    #     'name': 'T-Blog',
+    #     'link': 'https://tomisinerinle.herokuapp.com/blog',
+    #     'image': 'T-Blog.PNG' ,
+    #     'descriptions': 'lorem ipsum',
+    #     'category': 'Web Application',
+    # },    
 
     # {
     #     'id': 3,
@@ -76,7 +76,6 @@ portfolio = [
     # },
 
     {
-        'id': 3,
         'name': 'DaystarChapel',
         'link': None,
         'image': 'Daystar Chapel flyer3.png',
@@ -86,7 +85,6 @@ portfolio = [
 
     
     {
-        'id': 4,
         'name': 'EaglesWingsRide',
         'link': None,
         'image': 'eagleswingsrideflyer.png',
@@ -95,7 +93,6 @@ portfolio = [
     },
 
     {
-        'id': 5,
         'name': 'KanLaitan Limited',
         'link': None,
         'image': 'Kan laitan ltd.jpg',
