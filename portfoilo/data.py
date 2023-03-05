@@ -57,24 +57,6 @@ portfolio = [
 
     },
 
-    # {
-    #     'id': 2,
-    #     'name': 'T-Blog',
-    #     'link': 'https://tomisinerinle.herokuapp.com/blog',
-    #     'image': 'T-Blog.PNG' ,
-    #     'descriptions': 'lorem ipsum',
-    #     'category': 'Web Application',
-    # },    
-
-    # {
-    #     'id': 3,
-    #     'name': 'T-Blog',
-    #     'link': 'https://jumia.com',
-    #     'image': 't-sketch-screenshot.PNG',
-    #     'descriptions': 'lorem ipsum',
-    #     'category': 'Web Application',  
-    # },
-
     {
         'name': 'DaystarChapel',
         'link': None,
