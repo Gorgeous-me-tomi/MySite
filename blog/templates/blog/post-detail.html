@@ -20,11 +20,11 @@
         </div>
     {% endif %}
 
-    <div class="row my-5">
+    <div class="container my-5">
 
         <!-- Blog -->
         
-        <div class="col-12 col-lg-8 blog-area">
+        <div class="blog-area">
             <div class="link">
                 <small> <a href="{% url 'home-page' %}" class="text-decoration-none"> Home</a> &RightTriangle; <a href="{% url 'posts-page' %}" class="text-decoration-none"> Posts</a> &RightTriangle; {{ post.title }} </small>
             </div>
@@ -33,7 +33,7 @@
                 <div class="col info">
                     <img class="author-img" src="{{post.author.image.url}}" alt="" srcset="">
                     <div class="">
-                        <a class="author-name fw-bold" href="{% url 'author-details' post.author.pk %}" target="_blank"> {{post.author}} </a>
+                        <span class="author-name">{{post.author}} </span>
                         <span> <a href="mailto:{{author.email_address}}"><i class="bi bi-envelope-fill"></i></a> </span>
                         <div class="blog-prop"> 
                             <span>Last updated on {{post.date}}</span>
@@ -60,7 +60,9 @@
 
             <!-- Blog Content -->
             <div class="blog-content mb-5">
-                <p>{{ post.content }} {{ post.content }} {{ post.content }} {{ post.content }}{{ post.content }}</p>
+                {% autoescape off %}
+                    <p>{{ post.content }}</p>
+                {% endautoescape %}
             </div>
 
 
@@ -99,7 +101,7 @@
             </div>
 
             <!-- More from author -->
-            <h6>More from {{author}}: </h6>
+            <h6>More of My posts: </h6>
 
             {% for author_post in author_posts %}
 
@@ -127,7 +129,7 @@
         </div>
 
         <!-- Side Bar -->
-        <div class="col-12 col-lg-4 d-none d-lg-block side-bar">
+        {% comment %} <div class="col-12 col-lg-4 d-none d-lg-block side-bar">
             <div class="author-info">
                 <div class="text-center">
                     <img class="author-img" src="{{author.image.url}}" alt="">
@@ -139,33 +141,9 @@
                 <p class="author-about"> {{author.about}} </p>
             </div>
 
-            <hr class="my-5">
+            <hr class="my-5"> {% endcomment %}
 
-            <!-- More from author -->
-            <h6>More from {{author}} </h6>
-
-            {% for author_post in author_posts %}
-
-                {% if author_post.slug == post.slug %}
-                    
-                {% else %}
-
-                <div class="posts_frm_author">
-                    <div>
-                        <a href="{% url 'post-detail-page' author_post.slug %}">
-                            <img src="{{author_post.image.url}}" alt="Author's Img">
-                        </a>
-                    </div>
-
-                    <div>
-                        <a href="{% url 'post-detail-page' author_post.slug %}" style="text-decoration: none;"> <span class="fw-bold"> {{author_post.title}} </span> </a>
-                        <span>{{author_post.date}}</span>
-                    </div>
-                </div>
-
-                {% endif %}
-
-            {% endfor %}
+        
 
                         <!-- <h2 class="fw-bold mt-5">More from Erinle Tomisin</h2> -->
 

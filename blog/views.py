@@ -46,7 +46,8 @@ def search_posts(request):
     authour_qs = Author.objects.filter(Q(first_name__contains=q) | Q(last_name__contains=q))
 
     return render(request, 'blog/all-posts.html', {
-        'all_posts': qs,
+        'all_posts': posts,
+        'requested_posts': qs,
         'author_search': authour_qs,
         'other_posts': posts,
         'tags': tags,

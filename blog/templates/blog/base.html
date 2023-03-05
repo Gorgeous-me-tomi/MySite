@@ -10,7 +10,6 @@
     <title> {% block page_title %} {% endblock page_title %} </title>
 
     
-    <!-- <link rel="stylesheet" href="{% static 'blog/index.css' %}"> -->
   
 
     <!-- Bootstrap Css only -->
@@ -35,36 +34,17 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav mx-auto mb-2 mb-lg-0">
-              <!-- <a class="nav-link me-2" aria-current="page" href="{% url 'home-page' %}">Home</a> -->
               <a class="nav-link" href="{% url 'posts-page' %}">All posts</a>
-              <!-- <a class="nav-link" href="#">Contact</a> -->
             </div>
             <form class="d-flex" role="search" action="{% url 'search-tru-posts' %}">
               <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
-
         
           
         </div>
     </nav>
-
-    <!-- <header class="py-5 bg-light border-bottom mb-4 header-color">
-      
-      <div class='img-overlay'>
-        <div class="container">
-
-
-          <div class="text-center my-5">
-            <h1 class="fw-bolder"> {% block blog_title %}  {% endblock blog_title %} </h1>
-            <p class="lead mb-0"> {% block blog_subtitle %}{% endblock blog_subtitle %} </p>
-            <div class='paths mt-2'> {% block link_path %}  {% endblock link_path %} </div>
-          </div>
-            
-        </div>
-      </div>
-    </header> -->
 
 
 
@@ -83,8 +63,8 @@
 
     <!-- Footer-->
 
-    <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; <a href="/" target="_blank">Erinle Tomisin</a> 2022</p></div>
+    <footer class="py-3 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">This website was made by <a href="tomisinerinle.up.railway.app" target="_blank">Erinle Tomisin</a> </p></div>
     </footer>
 
     <!-- Bootstrap script -->
