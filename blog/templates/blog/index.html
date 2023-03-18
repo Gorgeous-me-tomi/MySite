@@ -1,0 +1,85 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block page_title %} T-Blog Home {% endblock page_title %}
+
+{% block blog_title %}  {% endblock blog_title %}
+{% block blog_subtitle %}   {% endblock blog_subtitle %}
+
+
+{% block content %}
+
+  
+    <style>
+        header{
+            width: 100%;
+            height: fit-content;
+            background: linear-gradient(#89f7fe ,#66a6ff) ;
+            border-radius: 20px;
+            box-shadow: 0px 5px 7px black;
+            padding: 4rem 1rem 8rem 1rem;
+        }
+
+        .info-div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info-div img{
+            width: 150px;
+            height: 155px;
+            border-radius: 100%;
+        }
+
+        .info-div h1{
+            margin-top: 20px;
+            text-align: center;
+        }
+
+    </style>
+
+    <header>
+
+        <div class="row">
+            <div class="col info-div">
+                <img src="{% static 'blog/images/Me.jpg' %}" alt="MyPicture" srcset="">
+                <h1 class="text-dark">Welcome to Tomisin's Blog!</h1>
+                <h4 class="text-center">Hi, I'm Tomisin and i like to blog about tech and the world!</h4>
+            </div>
+
+            <!-- <div class="col">
+                hi
+            </div> -->
+
+        </div>
+        <!-- <img src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" class='radius-circle' alt="My-img" srcset=""> -->
+
+    </header>
+
+    <div class='row' style='margin: 0 1rem; position: relative; top: -5rem';>
+         
+
+        {% for post in posts %}
+
+            <div class="col-12 col-lg-4">
+                <div class="card mb-4">
+                    <a href="{% url 'post-detail-page' post.slug %}"><img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}" width=700px height=250px ></a>
+                    <div class="card-body">
+                        <div class="small text-muted">{{ post.date }}, by <b>{{ post.author }}</b> </div>
+                        <h2 class="card-title h4"> {{ post.title }} </h2>
+                        <p class="card-text"> {{ post.excerpt }} </p>
+
+                        
+                        <a class="btn btn-primary" href="{% url 'post-detail-page' post.slug %}">Read more →</a>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+{% endblock content %}
+ 

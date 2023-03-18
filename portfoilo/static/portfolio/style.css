@@ -1048,7 +1048,7 @@ section.hire-me .content button{
 
 /* Form Error Ends */
 
-.contact-form form input[type='submit'], .contact-form form input[type='button']{
+.contact-form form input[type='submit']{
     display: inline;
     width: 100%;
 
