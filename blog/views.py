@@ -1,6 +1,7 @@
 from ast import arg
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.urls import reverse
 
 from django.views import View
@@ -16,6 +17,7 @@ tags = Tag.objects.all()
 
 # Create your views here.
 
+@csrf_exempt
 class HomeView(ListView):
     template_name = 'blog/index.html'
     model = Post
@@ -28,7 +30,7 @@ class HomeView(ListView):
         return data
 
 
-
+@csrf_exempt
 def all_posts(request):
     return render(request, 'blog/all-posts.html', {
         'all_posts': posts,
@@ -38,7 +40,7 @@ def all_posts(request):
         'post_category': 'All Posts',
     })
 
-
+@csrf_exempt
 def search_posts(request):
     q = request.GET.get('q')
     qs = posts.filter(title__contains=q)
@@ -56,7 +58,7 @@ def search_posts(request):
     })
 
 
-
+@csrf_exempt
 def post_on_tag(request, tag_name):
     requested_tag = Tag.objects.filter(caption=tag_name)
     try:
@@ -73,7 +75,7 @@ def post_on_tag(request, tag_name):
 
 
 class PostDetailView(View):
-
+    @csrf_exempt
     def get(self, request, slug):
         requested_post = get_object_or_404(Post, slug=slug)
         author = requested_post.author
@@ -88,7 +90,7 @@ class PostDetailView(View):
             'comment_form': comment_form,
         })
 
-
+    @csrf_protect
     def post(self, request, slug):
         requested_post = get_object_or_404(Post, slug=slug)
         comment_form = CommentForm(request.POST)
@@ -112,7 +114,7 @@ class PostDetailView(View):
         })
         
 
-
+@csrf_exempt
 def personal_details(request, pk):
     requested_author = get_object_or_404(Author, pk=pk)
     # print(requested_author)
