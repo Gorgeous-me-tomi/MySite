@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [ '*']
 
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = ['https://tomisinerinle.up.railway.app/']
+
 
 # Application definition
 
